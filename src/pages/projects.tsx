@@ -110,7 +110,7 @@ const projects: Project[] = [
     title: "SIS Cursos",
     description:
       "Sistema completo de cursos online com inscricao, pagamento, aulas e certificado.",
-    stack: "Python, Django, PostgreSQL, Docker",
+    stack: "Python, Django, JavaScript, PostgreSQL, Docker",
     link: "https://www.siscursos.com.br",
     linkGithub: "https://github.com/brunocoelhosi/School-Management",
   },
@@ -136,7 +136,7 @@ const projects: Project[] = [
     title: "Email Classifier",
     description:
       "Classificador automático de e-mails que utiliza técnicas de Processamento de Linguagem Natural (NLP) e Inteligência Artificial para categorizar e sugerir respostas automáticas para e-mails recebidos.",
-    stack: "Python, OpenAI, Pytest",
+    stack: "Python, OpenAI, Docker, Pytest",
     linkGithub: "https://github.com/brunocoelhosi/Email_Classifier-AutoU",
     link: "https://email-classifier-autou-pe6k.onrender.com/",
   },

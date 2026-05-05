@@ -62,7 +62,7 @@ export function Hero({ isDark, onToggleTheme }: HeroProps) {
                     : "Tema claro ativo; alternar para escuro"
                 }
                 onClick={onToggleTheme}
-                className={`relative inline-flex h-8 w-[3.25rem] shrink-0 items-center rounded-full border transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 ${
+                className={`cursor-pointer relative inline-flex h-8 w-[3.25rem] shrink-0 items-center rounded-full border transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 ${
                   isDark
                     ? "border-slate-600 bg-slate-800 focus-visible:ring-cyan-400 focus-visible:ring-offset-slate-950"
                     : "border-sky-700/70 bg-sky-100 focus-visible:ring-sky-500 focus-visible:ring-offset-white"
