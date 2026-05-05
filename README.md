@@ -1,73 +1,70 @@
-# React + TypeScript + Vite
+# 👨‍💻 Portfólio - Bruno Coelho
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Aplicação web de portfólio pessoal desenvolvida para apresentar projetos, experiência e canais de contato profissional de forma moderna, responsiva e objetiva.
 
-Currently, two official plugins are available:
+## 📌 Sobre o projeto
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Este projeto foi construído com foco em:
 
-## React Compiler
+- ✅ apresentação clara de projetos desenvolvidos;
+- 🎯 navegação simples e visual profissional;
+- 📱 boa experiência em desktop e mobile;
+- 🌙 alternância de tema claro/escuro.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+As seções principais da página são:
 
-## Expanding the ESLint configuration
+- 🧑‍🚀 **Hero**: apresentação pessoal com links para GitHub, LinkedIn, Email e WhatsApp;
+- 🗂️ **Projetos**: cards com descrição, stack e links para demo/repositório;
+- 📬 **Contato**: resumo profissional e informações para contato direto.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 🛠️ Tecnologias utilizadas
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- ⚛️ React
+- 🔷 TypeScript
+- ⚡ Vite
+- 🎨 Tailwind CSS
+- ⭐ React Icons
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## 🚀 Como executar localmente
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### 📋 Pré-requisitos
+
+- 🟢 Node.js 18+ (recomendado)
+- 📦 npm
+
+### ▶️ Passos
+
+```bash
+# 1) Instalar dependências
+npm install
+
+# 2) Rodar em ambiente de desenvolvimento
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+O projeto ficará disponível em um endereço local exibido no terminal (normalmente `http://localhost:5173`).
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## 📜 Scripts disponíveis
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+- `npm run dev`: inicia o servidor de desenvolvimento;
+- `npm run build`: gera o build de produção;
+- `npm run preview`: executa a pré-visualização do build;
+- `npm run lint`: executa o lint do projeto.
+
+## 🧱 Estrutura principal
+
+```text
+src/
+  pages/
+    Homepage.tsx
+    hero.tsx
+    projects.tsx
+    contact.tsx
 ```
+
+## 🤝 Contato
+
+- 🐙 GitHub: [brunocoelhosi](https://github.com/brunocoelhosi)
+- 💼 LinkedIn: [Bruno Coelho](https://www.linkedin.com/in/bruno-coelho-13009a207/)
+- ✉️ Email: [brunocoelho.si@outlook.com](mailto:brunocoelho.si@outlook.com)
+- 📲 WhatsApp: [+55 (34) 99188-0240](https://wa.me/5534991880240)
