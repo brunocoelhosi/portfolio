@@ -1,5 +1,12 @@
 import fotoBruno from "../assets/fotobruno.png";
-import { FaGithub, FaLinkedin, FaEnvelope, FaWhatsapp } from "react-icons/fa";
+import {
+  FaGithub,
+  FaLinkedin,
+  FaEnvelope,
+  FaWhatsapp,
+  FaSun,
+  FaMoon,
+} from "react-icons/fa";
 
 type HeroProps = {
   isDark: boolean;
@@ -12,8 +19,8 @@ export function Hero({ isDark, onToggleTheme }: HeroProps) {
       <div
         className={`absolute inset-0 -z-10 ${
           isDark
-            ? "bg-[radial-gradient(circle_at_top,rgba(34,211,238,0.18),transparent_45%)]"
-            : "bg-[radial-gradient(circle_at_top,rgba(14,165,233,0.18),transparent_45%)]"
+            ? "bg-[radial-gradient(circle_at_top,theme(colors.cyan.400/18%),transparent_45%)]"
+            : "bg-[radial-gradient(circle_at_top,theme(colors.sky.500/18%),transparent_45%)]"
         }`}
       />
 
@@ -47,14 +54,34 @@ export function Hero({ isDark, onToggleTheme }: HeroProps) {
 
               <button
                 type="button"
-                onClick={onToggleTheme}
-                className={`rounded-lg border px-3 py-2 text-xs font-semibold transition ${
+                role="switch"
+                aria-checked={isDark}
+                aria-label={
                   isDark
-                    ? "border-slate-700 bg-slate-900 text-slate-200 hover:border-cyan-400/50 hover:text-cyan-200"
-                    : "border-slate-300 bg-white text-slate-700 hover:border-sky-400 hover:text-sky-700"
+                    ? "Tema escuro ativo; alternar para claro"
+                    : "Tema claro ativo; alternar para escuro"
+                }
+                onClick={onToggleTheme}
+                className={`relative inline-flex h-8 w-[3.25rem] shrink-0 items-center rounded-full border transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 ${
+                  isDark
+                    ? "border-slate-600 bg-slate-800 focus-visible:ring-cyan-400 focus-visible:ring-offset-slate-950"
+                    : "border-sky-700/70 bg-sky-100 focus-visible:ring-sky-500 focus-visible:ring-offset-white"
                 }`}
               >
-                {isDark ? "Tema claro" : "Tema escuro"}
+                <span
+                  className={`pointer-events-none absolute top-1 left-1 flex h-6 w-6 items-center justify-center rounded-full bg-white shadow-md transition-transform duration-200 ease-out ${
+                    isDark ? "translate-x-[1.375rem]" : "translate-x-0"
+                  }`}
+                >
+                  {isDark ? (
+                    <FaMoon
+                      className="h-3.5 w-3.5 text-slate-700"
+                      aria-hidden
+                    />
+                  ) : (
+                    <FaSun className="h-3.5 w-3.5 text-amber-500" aria-hidden />
+                  )}
+                </span>
               </button>
             </div>
             <h1 className="text-3xl font-bold leading-tight md:text-5xl">
@@ -74,8 +101,9 @@ export function Hero({ isDark, onToggleTheme }: HeroProps) {
               }`}
             >
               Desenvolvo sites e sistemas web com foco em performance,
-              usabilidade e visual profissional. Meu objetivo e transformar
-              ideias em produtos digitais que entregam resultado.
+              usabilidade e design profissional, com backends robustos, APIs bem
+              estruturadas e arquitetura preparada para crescer, transformando
+              ideias em produtos digitais que geram resultados.
             </p>
 
             <div className="flex flex-wrap gap-2">
@@ -125,7 +153,7 @@ export function Hero({ isDark, onToggleTheme }: HeroProps) {
                 className={`inline-flex items-center gap-2 rounded-lg px-3 py-2 text-sm font-semibold transition ${
                   isDark
                     ? "bg-cyan-500 text-slate-950 hover:bg-cyan-400"
-                    : "bg-sky-600 text-white hover:bg-sky-500"
+                    : "bg-sky-700 text-white hover:bg-sky-600"
                 }`}
               >
                 <FaWhatsapp className="h-4 w-4" />

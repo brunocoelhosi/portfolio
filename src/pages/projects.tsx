@@ -1,6 +1,7 @@
 import sisCursos from "../assets/logoProjetos/logosis.png";
 import marianaRodrigues from "../assets/logoProjetos/logomariana.png";
 import autou from "../assets/logoProjetos/logoautou.png";
+import pc_catalogo from "../assets/logoProjetos/logopc_catalogo.png";
 import { FaGithub } from "react-icons/fa";
 
 type Project = {
@@ -12,57 +13,56 @@ type Project = {
   linkGithub?: string;
 };
 
-/** Cores aproximadas às marcas oficiais; variantes light/dark (tema vem de isDark, não de classe `dark:`). */
+/* Cores das tecnologias*/
 const techStyles: Record<string, { light: string; dark: string }> = {
   react: {
-    light: "bg-[#61DAFB]/15 text-[#087ea4] border-[#61DAFB]/50",
-    dark: "bg-[#61DAFB]/20 text-[#99e6fa] border-[#61DAFB]/45",
+    light: "bg-cyan-100 text-cyan-800 border-cyan-300",
+    dark: "bg-cyan-900/40 text-cyan-200 border-cyan-600/50",
   },
   typescript: {
-    light: "bg-[#3178C6]/12 text-[#235a97] border-[#3178C6]/40",
-    dark: "bg-[#3178C6]/25 text-[#9dc6f5] border-[#3178C6]/45",
+    light: "bg-blue-100 text-blue-800 border-blue-300",
+    dark: "bg-blue-900/40 text-blue-200 border-blue-600/50",
   },
   javascript: {
-    light: "bg-[#F7DF1E]/35 text-[#3e3e0a] border-[#E8D000]/60",
-    dark: "bg-[#F7DF1E]/20 text-[#f5e6a0] border-[#F7DF1E]/40",
+    light: "bg-yellow-100 text-yellow-800 border-yellow-300",
+    dark: "bg-yellow-900/40 text-yellow-200 border-yellow-600/50",
   },
   tailwind: {
-    light: "bg-[#06B6D4]/12 text-[#0c7490] border-[#06B6D4]/40",
-    dark: "bg-[#06B6D4]/20 text-[#7ce8f7] border-[#06B6D4]/40",
+    light: "bg-sky-100 text-sky-800 border-sky-300",
+    dark: "bg-sky-900/40 text-sky-200 border-sky-600/50",
   },
   node: {
-    light: "bg-[#339933]/12 text-[#1f5c1f] border-[#339933]/45",
-    dark: "bg-[#339933]/22 text-[#8fdf8f] border-[#339933]/50",
+    light: "bg-green-100 text-green-800 border-green-300",
+    dark: "bg-green-900/40 text-green-200 border-green-600/50",
   },
   python: {
-    light: "bg-[#3776AB]/12 text-[#1e4a70] border-[#3776AB]/40",
-    dark: "bg-[#3776AB]/25 text-[#8ec5ed] border-[#3776AB]/45",
+    light: "bg-indigo-100 text-indigo-800 border-indigo-300",
+    dark: "bg-indigo-900/40 text-indigo-200 border-indigo-600/50",
   },
   django: {
-    light: "bg-[#092E20]/10 text-[#092E20] border-[#0c4c32]/50",
-    dark: "bg-[#0d3d28]/50 text-[#6ee7a8] border-[#1a7a4a]/50",
+    light: "bg-emerald-100 text-emerald-800 border-emerald-300",
+    dark: "bg-emerald-900/40 text-emerald-200 border-emerald-600/50",
   },
   postgresql: {
-    light: "bg-[#336791]/12 text-[#1f4560] border-[#336791]/40",
-    dark: "bg-[#336791]/30 text-[#9ec5e8] border-[#336791]/50",
+    light: "bg-slate-100 text-slate-800 border-slate-300",
+    dark: "bg-slate-900/40 text-slate-200 border-slate-600/50",
   },
   mongodb: {
-    light: "bg-[#47A248]/12 text-[#2d6a2f] border-[#47A248]/50",
-    dark: "bg-[#47A248]/25 text-[#a8e0ab] border-[#47A248]/50",
+    light: "bg-lime-100 text-lime-800 border-lime-300",
+    dark: "bg-lime-900/40 text-lime-200 border-lime-600/50",
   },
   docker: {
-    light: "bg-[#2496ED]/12 text-[#0d5a9e] border-[#2496ED]/45",
-    dark: "bg-[#2496ED]/22 text-[#9fd2fc] border-[#2496ED]/50",
+    light: "bg-blue-100 text-blue-700 border-blue-300",
+    dark: "bg-blue-950/40 text-blue-200 border-blue-600/50",
   },
   redis: {
-    light: "bg-[#DC382D]/10 text-[#8b1f1a] border-[#DC382D]/45",
-    dark: "bg-[#DC382D]/22 text-[#f0a4a0] border-[#DC382D]/50",
+    light: "bg-red-100 text-red-800 border-red-300",
+    dark: "bg-red-900/40 text-red-200 border-red-600/50",
   },
   keycloak: {
-    light: "bg-[#EDEDED] text-[#3E444A] border-[#4D4D4D]/40",
-    dark: "bg-[#2b2b2b] text-[#d4d4d4] border-[#5c5c5c]/50",
+    light: "bg-zinc-100 text-zinc-800 border-zinc-300",
+    dark: "bg-zinc-900/40 text-zinc-200 border-zinc-600/50",
   },
-  /** IA genérico (não vinculado a um logo único) */
   ai: {
     light: "bg-violet-100 text-violet-800 border-violet-300",
     dark: "bg-violet-950/60 text-violet-200 border-violet-600/50",
@@ -124,10 +124,11 @@ const projects: Project[] = [
     linkGithub: "https://github.com/brunocoelhosi/psico-marianarodrigues",
   },
   {
+    image: pc_catalogo,
     title: "Catálogo de Produtos - Marketplace",
     description:
       "Gerenciamento dos produtos do Catálogo do Marketplace, garantindo organização e controle centralizado. Fornecendo informações dos produtos disponíveis aos sellers e consumidores.",
-    stack: "Python, MongoDB, Docker, IA, Redis, Keycloak",
+    stack: "Python, FastAPI, MongoDB, Docker, IA, Redis, Keycloak",
     linkGithub: "https://github.com/brunocoelhosi/pc-catalogo",
   },
   {
@@ -238,7 +239,7 @@ export function Projects({ isDark }: ProjectsProps) {
                     className={`rounded-lg px-3 py-2 text-xs font-semibold transition ${
                       isDark
                         ? "bg-cyan-500 text-slate-950 hover:bg-cyan-400"
-                        : "bg-sky-600 text-white hover:bg-sky-500"
+                        : "bg-sky-700 text-white hover:bg-sky-600"
                     }`}
                   >
                     Ver projeto
